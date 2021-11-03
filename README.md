@@ -57,7 +57,7 @@ $$
 
    证明者拿到函数$F$之后，使用自己的私有数据$u$进行计算，得到输出$y$。同时，根据计算的中间结果，生存证明$\pi$。将计算结果$y$和证明$\pi$ 发给验证者。
 
-3. 验证者（verifier）验证证明：$\{{0,1\}} \leftarrow Verify(VK_F,y,\pi_y)$
+3. 验证者（verifier）验证证明：$\left\{0,1\right\} \leftarrow Verify(VK_F,y,\pi_y)$
 
    验证者拿到计算结果$y$和证明$\pi$后，使用验证密钥$VK$对结果进行验证。
 
@@ -104,7 +104,7 @@ $$
    
    其中，$v_{mid}(x) = \Sigma_{k \in I_{mid}}c_k \cdot v_k(s)$，同理计算$w_{mid}(s),y_{mid}(s)$。
 
-3. 验证者（verifier）验证证明 : $\{0,1\}\leftarrow Verify(VK_F,y,\pi_y)$
+3. 验证者（verifier）验证证明 : $\left\{0,1\right\} \leftarrow Verify(VK_F,y,\pi_y)$
 
    将证明 $\pi$ 映射为 $(g^{V_{mid}},g^{W_{mid}},g^{Y_{mid}},g^H,g^{V_{mid}'},g^{W_{mid}'},g^{Y_{mid}'},g^Z)$。
 
