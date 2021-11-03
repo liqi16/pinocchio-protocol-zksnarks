@@ -98,7 +98,7 @@ $$
 
 3. 验证者（verifier）验证证明 : $\{0,1\}\leftarrow Verify(VK_F,y,\pi_y)$
 
-   将证明 $\pi$ 映射为 $(g^{V_{mid}},g^{W_{mid}},g^{Y_{mid}},g^H,g^{V'_{mid}},g^{W'_{mid}},g^{Y'_{mid}},g^Z)$。
+   将证明 $\pi$ 映射为 $(g^{V_{mid}},g^{W_{mid}},g^{Y_{mid}},g^H,g^{V_{mid}'},g^{W_{mid}'},g^{Y_{mid}'},g^Z)$。
 
    使用 $VK$ 计算 $g_v^{v_{io}(s)} = \Pi_{k \in [N]}(g_v^{v_k(s)})^{c_k}$ ，同理计算 $g_w^{w_{io}(s)},g_y^{y_{io}(s)}$ 。
 
