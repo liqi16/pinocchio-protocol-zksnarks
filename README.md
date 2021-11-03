@@ -111,9 +111,15 @@ $$
    验证可变多项式约束：
    
    $$
-   e(g_v^{V'_{mid}},g) = e(g_v^{V_{mid}},g^{\alpha_v})\\
-   e(g_w^{W'_{mid}},g) = e(g_w^{W_{mid}},g^{\alpha_w})\\
-   e(g_y^{Y'_{mid}},g) = e(g_y^{Y_{mid}},g^{\alpha_y})
+   e(g_v^{V_{mid}'},g) = e(g_v^{V_{mid}},g^{\alpha_v})
+   $$
+   
+   $$
+   e(g_w^{W_{mid}'},g) = e(g_w^{W_{mid}},g^{\alpha_w})
+   $$
+   
+   $$
+   e(g_y^{Y_{mid}'},g) = e(g_y^{Y_{mid}},g^{\alpha_y})
    $$
    
    验证每个线性组合是否使用了相同的系数：
