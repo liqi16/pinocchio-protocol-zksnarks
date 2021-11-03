@@ -104,7 +104,7 @@ $$
    
    其中，$v_{mid}(x) = \Sigma_{k \in I_{mid}}c_k \cdot v_k(s)$，同理计算$w_{mid}(s),y_{mid}(s)$。
 
-3. 验证者（verifier）验证证明 : $\left\{0,1\right\} \leftarrow Verify(VK_F,y,\pi_y)$
+3. 验证者（verifier）验证证明 : $\{0,1\} \leftarrow Verify(VK_F,y,\pi_y)$
 
    将证明 $\pi$ 映射为 $(g^{V_{mid}},g^{W_{mid}},g^{Y_{mid}},g^H,g^{V_{mid}'},g^{W_{mid}'},g^{Y_{mid}'},g^Z)$。
 
