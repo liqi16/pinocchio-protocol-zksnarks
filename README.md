@@ -57,7 +57,7 @@ $$
 
    证明者拿到函数$F$之后，使用自己的私有数据$u$进行计算，得到输出$y$。同时，根据计算的中间结果，生存证明$\pi$。将计算结果$y$和证明$\pi$ 发给验证者。
 
-3. 验证者（verifier）验证证明：$\{0,1\}\leftarrow Verify(VK_F,y,\pi_y)$
+3. 验证者（verifier）验证证明：$\{{0,1\}} \leftarrow Verify(VK_F,y,\pi_y)$
 
    验证者拿到计算结果$y$和证明$\pi$后，使用验证密钥$VK$对结果进行验证。
 
@@ -71,6 +71,14 @@ $$
 
    选择随机数 $r_v,r_w,s,\alpha_v,\alpha_w,\alpha_y,\beta,\gamma \stackrel{R}{\leftarrow} F$ 。
    设 $r_y = r_v \cdot r_w, g_v = g^{r_v}, g_w = g^{r_w}, g_y = g^{r_y}$ 。
+   
+   $$
+   \{g_v^{v_k(s)}\}_{k \in I_{mid}}
+   $$
+   
+   $$
+   \{g_w^{w_k(s)}\}_{k \in I_{mid}}
+   $$
    
    $$
    EK_F = (\{g_v^{v_k(s)}\}_{k \in I_{mid}},\{g_w^{w_k(s)}\}_{k \in I_{mid}},\{g_y^{y_k(s)}\}_{k \in I_{mid}},\\
