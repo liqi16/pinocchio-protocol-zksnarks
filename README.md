@@ -33,7 +33,7 @@ zk-SNARK（ Zero-Knowledge Succinct Non-Interactive Argument of Knowledge）是�
 
 QAP（[Quadratic Arithmetic Program](https://link.springer.com/content/pdf/10.1007/978-3-642-38348-9_37.pdf)）的定义：
 
-域$F$上的QAP $Q$包含三组$m+1$多项式$V=\{v_k(x)\}$，$W=\{w_k(x)\}$，$Y=\{y_k(x)\}$（其中$k \in \{0...m\}$）和一个目标多项式$t(x)$。假设$f$是一个函数，它以域$F$上的 $n$ 个元素作为输入，$n'$个元素作为输出，总共有 $N = n + n'$个输入输出元素。
+域$F$上的QAP $Q$包含三组$m+1$多项式 $V=\{v_k(x)\}$ ，$W=\{w_k(x)\}$ ，$Y=\{y_k(x)\}$（其中$k \in \{0...m\}$）和一个目标多项式$t(x)$。假设$f$是一个函数，它以域$F$上的 $n$ 个元素作为输入，$n'$个元素作为输出，总共有 $N = n + n'$个输入输出元素。
 
 此时，我们可以说，使用Q计算f，如果$(c_1,...c_N)\in F^N$是 f 的输入和输出的有效赋值，当且仅当存在系数$(c_1,...c_N)$ 使 t (x)整除 p (x)，其中
 $$
