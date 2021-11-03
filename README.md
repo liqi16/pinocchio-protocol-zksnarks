@@ -69,45 +69,55 @@ $$
 
    设函数$F$共有$N$个输入/输出。首先将$F$转换为一个算数电路$C$，然后将$C$编译成为对应的QAP$Q=((t_x),V,W,Y)$ ，Q的大小为m阶数为d。$I_{mid} = \{N+1,...,m\}$是输入输出无关值（non-IO-related indices），e是一个非平凡的双线性映射（non-trivial bilinear map）$e:G\times G \rightarrow G_T$。g是G的生成元。
 
-   选择随机数$r_v,r_w,s,\alpha_v,\alpha_w,\alpha_y,\beta,\gamma \stackrel{R}{\leftarrow} F$。设$r_y = r_v \cdot r_w, g_v = g^{r_v}, g_w = g^{r_w}, g_y = g^{r_y}$。
+   选择随机数 $r_v,r_w,s,\alpha_v,\alpha_w,\alpha_y,\beta,\gamma \stackrel{R}{\leftarrow} F$ 。
+   设 $r_y = r_v \cdot r_w, g_v = g^{r_v}, g_w = g^{r_w}, g_y = g^{r_y}$ 。
+   
    $$
    EK_F = (\{g_v^{v_k(s)}\}_{k \in I_{mid}},\{g_w^{w_k(s)}\}_{k \in I_{mid}},\{g_y^{y_k(s)}\}_{k \in I_{mid}},\\
    \{g_v^{\alpha_v v_k(s)}\}_{k \in I_{mid}},\{g_w^{\alpha_w w_k(s)}\}_{k \in I_{mid}},\{g_y^{\alpha_yy_k(s)}\}_{k \in I_{mid}},\\
    \{g^{s^i}\}_i \in [d],\{g_v^{\beta v_k(s)} g_w^{\beta w_k(s)} g_y^{\beta y_k(s)}\})
    $$
 
+   
    $$
    VK_F = (g^1,g^{\alpha_v},g^{\alpha_w},g^{\alpha_y},g^{\gamma},g_y^{t(s)},\{g_v^{v_k(s)},g_w^{w_k(s)},g_y^{y_k(s)}\}_{k\in{0}\cup[N]}
    $$
 
 2. 证明者（prover）提供证明 : $(y,\pi_y) \leftarrow Compute(EK_F;u)$ 
 
-   对于输入 u ，证明者计算得到 f (u) ; 同时他还得到了中间变量$\{c_i\}_{i\in[m]}$。他得到了h (x)通过p (x) = h (x) t (x)，并计算了证明$\pi$。
+   对于输入$u$，证明者计算得到$f(u)$; 同时他还得到了中间变量 $\{c_i\}_{i\in[m]}$ 。他通过计算$p(x)=h(x)t(x)$得到了$h(x)$，并计算了证明$\pi$。
+   
    $$
    \pi = (g_v^{v_{mid}(s)},g_w^{w_{mid}(s)},g_y^{y_{mid}(s)},\\
    g^{h(s)},\\
    g_v^{\alpha_vv_{mid}(s)},g_w^{\alpha_ww_{mid}(s)},g_y^{\alpha_yy_{mid}(s)},\\
    g_v^{\beta v_{mid}(s)}g_w^{\beta w_{mid}(s)}g_y^{\beta y_{mid}(s)})
    $$
+   
    其中，$v_{mid}(x) = \Sigma_{k \in I_{mid}}c_k \cdot v_k(s)$，同理计算$w_{mid}(s),y_{mid}(s)$。
 
 3. 验证者（verifier）验证证明 : $\{0,1\}\leftarrow Verify(VK_F,y,\pi_y)$
 
-   将证明$\pi$映射为$(g^{V_{mid}},g^{W_{mid}},g^{Y_{mid}},g^H,g^{V'_{mid}},g^{W'_{mid}},g^{Y'_{mid}},g^Z)$。
+   将证明 $\pi$ 映射为 $(g^{V_{mid}},g^{W_{mid}},g^{Y_{mid}},g^H,g^{V'_{mid}},g^{W'_{mid}},g^{Y'_{mid}},g^Z)$。
 
-   使用$VK$计算$g_v^{v_{io}(s)} = \Pi_{k \in [N]}(g_v^{v_k(s)})^{c_k}$，同理计算$g_w^{w_{io}(s)},g_y^{y_{io}(s)}$。
+   使用 $VK$ 计算 $g_v^{v_{io}(s)} = \Pi_{k \in [N]}(g_v^{v_k(s)})^{c_k}$ ，同理计算 $g_w^{w_{io}(s)},g_y^{y_{io}(s)}$ 。
 
    验证计算正确性：
+   
    $$
    e(g_v^{v_0(s)}g_v^{v_{io}(s)}g_v^{V_{mid}},g_w^{w_0(s)}g_w^{w_{io}(s)}g_w^{W_{mid}}) = e(g_y^{t(s)},g^H)e(g_y^{y_0(s)}g_y^{y_{io}(s)}g_y^{Y_{mid}},g)
    $$
+   
    验证可变多项式约束：
+   
    $$
    e(g_v^{V'_{mid}},g) = e(g_v^{V_{mid}},g^{\alpha_v})\\
    e(g_w^{W'_{mid}},g) = e(g_w^{W_{mid}},g^{\alpha_w})\\
    e(g_y^{Y'_{mid}},g) = e(g_y^{Y_{mid}},g^{\alpha_y})
    $$
+   
    验证每个线性组合是否使用了相同的系数：
+   
    $$
    e(g^Z,g^\gamma) = e(g_v^{V_{mid}}g_w^{W_{mid}}g_y^{Y_{mid}},g^{\beta\gamma})
    $$
